@@ -1,4 +1,4 @@
-import { calculateMaxProfit } from "./profit";
+import { calculateMaxProfit, CalculateMaxProfitAndPlummettingPrice } from "./profit";
 
 const mockData = [
   [1,4,6,7,3,9,2],
@@ -47,15 +47,15 @@ describe("Profit Test", () => {
 
 
   describe("CalculateMaxProfitAndPlummettingPrice", () => {
-    it('should be calculate max profit result with plummeting price', () => {
-      const profit = calculateMaxProfit(plummetingData[0]);
+    it('should be calculate max profit result with plummeting price and result 0', () => {
+      const profit = CalculateMaxProfitAndPlummettingPrice(plummetingData[0]);
       
       expect(profit).not.toBeNull();
       expect(profit).toEqual(0);
     });
 
     it('should be calculate max profit(mock data 3) result with plummeting price and result 5', () => {
-      const profit = calculateMaxProfit(mockData[3]);
+      const profit = CalculateMaxProfitAndPlummettingPrice(mockData[3]);
       
       expect(profit).not.toBeNull();
       expect(profit).toEqual(5);
